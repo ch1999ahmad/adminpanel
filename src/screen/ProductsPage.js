@@ -11,9 +11,11 @@ import '../styles/index.css'
 // import api from "../services/api";
 import SideNavigation from '../components/SideNavigation'
 import { connect } from "react-redux";
-import { _getItems } from "../store/middlewares/appMiddleware";
+import { _deleteItems, _getItems } from "../store/middlewares/appMiddleware";
 import { Button } from "react-bootstrap";
-
+import path from "../api/path";
+import { _deleteitem } from "../store/middlewares/authMiddleware";
+import api from "../api/api";
 class ProductsPage extends React.Component {
 
   constructor(props) {
@@ -48,7 +50,13 @@ class ProductsPage extends React.Component {
   //     console.log(res.result);
   //     this.setState({orderdata:res.result})
   // }
-
+ 
+  deleteItem = async (_id) => {
+    console.log("items delete")
+    api(path.deleteItem +'/'+_id, "DELETE").then(res => {
+      console.log(res)
+    })
+  }
 
   // deleteHandler = async () => {
   //     console.log(this.state.deleteID)
@@ -144,9 +152,9 @@ class ProductsPage extends React.Component {
                                     <td>{items.description}</td>
 
                                     <td>
-                                      <Button>
-                                        delete
-                                       </Button>
+                                      <button onClick={() => this.deleteItem(items._id)}>
+                                        Delete
+                                       </button>
                                     </td>
                                     {/* <td><a onClick={() => this.setState({ showModal: true, deleteID: item.id })} className="btn btn-danger white">Delete</a></td> */}
                                     {/* <td><a href={'/admin/addItem?id=' + item.itemID} className="btn btn-info white">Edit</a></td> */}
@@ -197,8 +205,8 @@ const mapDispatch = dispatch => {
   return {
     // _login: (param) => dispatch(_login(param)),
     // setLoading: (bol) => dispatch(_setLoading(bol)),
-    _getItem: () => dispatch(_getItems())
-
+    _getItem: () => dispatch(_getItems()),
+    _deleteItem:() => dispatch(_deleteItems())
 
   }
 }

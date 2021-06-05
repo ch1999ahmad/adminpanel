@@ -1,6 +1,7 @@
  export const LOGIN = 'LOGIN'; 
  export const LOGOUT = 'LOGOUT'; 
  export const UPDATE = 'UPDATE'; 
+ export const DELETE = 'DELETE';
  //app
 //  export const SET_USERS = 'SET_USERS'
 

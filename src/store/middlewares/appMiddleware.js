@@ -42,7 +42,7 @@ export const _getUsers = () => {
 
         let res = await api(path.getuser, "GET",)
         if (res) {
-            // dispatch(set_user(res.result))
+             dispatch(set_user(res.result))
         }
     }
 }
@@ -57,6 +57,15 @@ export const _getItems = () => {
         }
     }
 }
+
+export const _deleteItems = () => {
+
+    return async (dispatch, getState) => {
+        let res = await api(path.deleteItem, "DELETE")
+        // dispatch(set_items(res.result))
+    }
+}
+
 export const _getCategories = () => {
 
     return async (dispatch, getState) => {

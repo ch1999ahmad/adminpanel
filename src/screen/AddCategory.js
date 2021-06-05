@@ -223,8 +223,8 @@ registerHandler = async (e) => {
 
                                             </div>
                                             <div class="form-group col-md-6">
-                                                    <label>Categories ID</label>
-                                                    <input type="text" name="name" placeholder="0122" required class="form-control" onChange={(e) => this.setState({categoryID : e.target.value })}></input>
+                                                    <label>price</label>
+                                                    <input type="text" name="name" placeholder="0122" required class="form-control" onChange={(e) => this.setState({price : e.target.value })}></input>
 
 
                                                 </div>

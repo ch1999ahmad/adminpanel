@@ -31,14 +31,16 @@ registerServiceWorker();
 // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   var firebaseConfig = {
-    apiKey: "AIzaSyDu7aE3bFs7gQbg6NozhYjDXCKslOJh3ao",
-    authDomain: "furniture-app-caffc.firebaseapp.com",
-    projectId: "furniture-app-caffc",
-    storageBucket: "furniture-app-caffc.appspot.com",
-    messagingSenderId: "612108609367",
-    appId: "1:612108609367:web:ea15a0fbddf3116d014012",
-    measurementId: "G-3R92MWWJ0N"
+    apiKey: "AIzaSyA_9LTIcnOckxwnmsK_TWoCkxVembi9m8g",
+    authDomain: "cashandcarry-14f29.firebaseapp.com",
+    projectId: "cashandcarry-14f29",
+    storageBucket: "cashandcarry-14f29.appspot.com",
+    messagingSenderId: "116874830184",
+    appId: "1:116874830184:web:ebed0c6585c5db7c3076dd",
+    measurementId: "G-0WDLQDV0RR"
   };
-  // Initialize Firebase
+  //Initialize Firebase
+  // firebase.initializeApp(firebaseConfig);
+  // firebase.analytics();
   if(!firebase.apps.length)
   firebase.initializeApp(firebaseConfig);

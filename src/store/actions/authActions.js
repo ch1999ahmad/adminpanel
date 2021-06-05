@@ -1,4 +1,4 @@
-import { LOGIN, LOGOUT, UPDATE,   } from './Types';
+import { DELETE, LOGIN, LOGOUT, UPDATE } from './Types';
 
 
 export const login = (  user) => (
@@ -21,7 +21,12 @@ export const updateuser = (info) => (
     }
 )
  
-
+export const deleteitem =(info) => (
+    {
+        type: DELETE,
+        info:info
+    }
+)
 // export const set_logged = (payload) => (
 //     {
 //         type: SET_LOGGED,
