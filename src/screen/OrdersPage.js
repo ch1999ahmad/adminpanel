@@ -18,11 +18,7 @@ const OrdersPage = () => {
 
               <h3 className=" text-left"><strong>Check all your order details here.</strong></h3>
         
-              {/* <p>Use prop striped to add zebra-striping to any table row within the table body</p> */}
-              {/* <MDBFormInline className="md-form m-0 pull-right">
-                <input className="form-control form-control-sm " type="search" placeholder="Type your query" aria-label="Search"/>
-                <MDBBtn size="sm" color="primary" className="my-0" type="submit"><MDBIcon icon="search" /></MDBBtn>
-            </MDBFormInline> */}
+               
               <MDBTable striped>
                 <MDBTableHead>
                   <tr>

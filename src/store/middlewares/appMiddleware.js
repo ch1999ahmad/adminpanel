@@ -62,7 +62,11 @@ export const _deleteItems = () => {
 
     return async (dispatch, getState) => {
         let res = await api(path.deleteItem, "DELETE")
-        // dispatch(set_items(res.result))
+        if (res){
+
+            // d ispatch(set_items(res.result))
+        }
+      
     }
 }
 

@@ -52,11 +52,14 @@ class ProductsPage extends React.Component {
   // }
  
   deleteItem = async (_id) => {
-    console.log("items delete")
-    api(path.deleteItem +'/'+_id, "DELETE").then(res => {
-      console.log(res)
-    })
-  }
+    // alert(path.deleteitem+_id)
+    console.log("delting item")
+     api(path.deleteitem  +'/'+_id, "DELETE").then(res=>{
+     console.log(res)
+   })
+
+    // alert(_id)
+}
 
   // deleteHandler = async () => {
   //     console.log(this.state.deleteID)
@@ -130,9 +133,9 @@ class ProductsPage extends React.Component {
                                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="edit: activate to sort column ascending">
                                   Delete
                                                             </th>
-                                {/* <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="edit: activate to sort column ascending">
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="edit: activate to sort column ascending">
                                   Edit
-                                                            </th> */}
+                                                            </th>
                               </tr>
                             </thead>
                             <tbody>
@@ -145,14 +148,14 @@ class ProductsPage extends React.Component {
                                     </td>
                                     <td>
 
-                                      <img src={items.image || "./viewitemhtml_files/1603476881.png"} style={{ width: "80px", height: "80px" }}></img>
+                                      <img src={items.image  } style={{ width: "80px", height: "80px" }}></img>
 
                                     </td>
 
                                     <td>{items.description}</td>
 
                                     <td>
-                                      <button onClick={() => this.deleteItem(items._id)}>
+                                      <button onClick={()=> this.deleteItem(items._id)}>
                                         Delete
                                        </button>
                                     </td>

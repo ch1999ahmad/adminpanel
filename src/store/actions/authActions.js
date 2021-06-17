@@ -24,7 +24,7 @@ export const updateuser = (info) => (
 export const deleteitem =(info) => (
     {
         type: DELETE,
-        info:info
+        info: info
     }
 )
 // export const set_logged = (payload) => (

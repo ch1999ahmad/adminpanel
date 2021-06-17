@@ -6,7 +6,7 @@ import '../styles/responsive.bootstrap4.min.css'
 import '../styles/index.css'
 // import ResponsiveDrawer from './ResponsiveDrawer'
 // import { Alert } from '@material-ui/lab';
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 // import { set_loading } from "../Store/actions/globalActions";
 import firebase from "firebase"
 // import api from "../services/api";
@@ -31,147 +31,62 @@ class Addproduct extends React.Component {
             // firebaseLink: '',
             // progress: 0, edit: false,
             name: "",
-            categoryID:"",
-            description:"",
-            price:"",
-            image:""
+            categoryID: "",
+            description: "",
+            price: "",
+            image: ""
         }
     }
 
-addProduct = async (e) => {
-    e.preventDefault()
-    let param = {
-        "name": this.state.name,
-       
-        "categoryID": this.state.categoryID,
-        "description": this.state.description,
-        "price": this.state.price,
-        "image": this.state.image,
+    uploadImage = async (e) => {
+        e.preventDefault()
+        let file = this.state.image
+        let folderName = 'item'
+        let fileName = this.state.name + '_' + new Date().toISOString()
+        var ref = firebase.storage().ref().child(folderName + "/" + fileName);
+        ref.put(file).then(() => {
+            firebase.storage().ref().child(folderName + "/" + fileName).getDownloadURL()
+                .then((URL) => {
+                    this.setState({ image: URL }, () => {
+                        this.addProduct()
+
+
+                    })
+
+                })
+        })
     }
-    let response = await api(path.itemsadd, "POST", param)
-    // alert(response.message)
-    console.log(response.message)
-    alert(response.message)
-}
 
-// uploadImage = async (uri,) => { 
-        
-//     const response = await fetch(uri);
-//     const blob = await response.blob();
-//     let folderName = 'item'
-//     let fileName = this.props.items.name
-//     var ref = firebase.storage().ref().child(folderName + "/" + fileName );
-//      ref.put(blob) .then(() =>{
-//         firebase.storage().ref().child(folderName + "/" + fileName ).getDownloadURL()
-//         .then((URL) =>{
-//             this.setState({image: URL},()=>{
-//                 this.addProduct()
-           
-            
-//             })
 
-//         })
-//      })
-    // .catch(() =>{
-    //     alert("error")
-    // })
-// }
+    addProduct = async (e) => {
+        // e.preventDefault()
+        let param = {
+            "name": this.state.name,
+
+            "categoryID": this.state.categoryID,
+            "description": this.state.description,
+            "price": this.state.price,
+            "image": this.state.image,
+        }
+        let response = await api(path.itemsadd, "POST", param)
+        // alert(response.message)
+        console.log(response.message)
+        alert(response.message)
+    }
+    pickImage = (e) => {
+        e.preventDefault()
+        if (e.target.files)
+            this.setState({ image: e.target.files[0] })
+    }
 
 
 
-
-
-
-    // componentDidMount() {
-    //     const search = this.props.location.search; // returns the URL query String
-    //     const params = new URLSearchParams(search);
-    //     const id = parseInt(params.get('id'));
-    //     if (id) {
-    //         let item = this.props.categories.filter(c => c.categoryID === id)
-    //         item = item[0];
-
-    //         this.setState({
-    //             categoryName: item.categoryName, categoryNameArabic: item.categoryNameArabic,
-    //             categoryDescription: item.categoryDescription,
-    //             categoryDescriptionArabic: item.categoryDescriptionArabic,
-    //             categoryID: item.categoryID, firebaseLink: item.categoryImage, edit: true,
-    //         })
-    //     }
-    // }
-// use in previous
-    // uploadHandler = (e) => {
-    //     e.preventDefault();
-    //     this.setState({ message: false })
-    //     if (this.props.loading)
-    //         return;
-
-    //     if (this.state.firebaseLink) {
-    //         return this.addCategory(this.state.firebaseLink)
-    //     }
-
-    //     if (!this.state.categoryImage) {
-    //         return alert("please selecet a image")
-    //     }
-
-    //     this.props.setLoading(true)
-    //     let file = this.state.categoryImage
-    //     let name = this.state.categoryName
-    //     let dir = 'category'
-    //     let t = this;
-    //     const uploadTask = firebase.storage().ref(dir + '/' + name).put(file)
-    //     uploadTask.on('state_changed', function (snapshot) {
-    //         var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-    //         t.setState({ progress })
-    //     }, function (error) {
-    //         return alert(error.message)
-    //     }, function () {
-    //         firebase.storage().ref(dir).child(name).getDownloadURL()
-    //             .then(url => {
-    //                 t.addCategory(url)
-    //             })
-    //     });
-
-
-    // }
-
-    // addCategory = async (url) => {
-    //     this.props.setLoading(true)
-    //     await this.setState({ firebaseLink: url })
-    //     let category = {
-    //         categoryID: this.state.categoryID,
-    //         categoryName: this.state.categoryName,
-
-    //         categoryDescription: this.state.categoryDescription,
-
-    //         categoryImage: this.state.firebaseLink,
-    //     }
-
-        //     let res;
-
-        //     if (this.state.edit) {
-        //         res = await api.editCategory(this.props.token, category)
-        //     }
-        //     else {
-
-        //         res = await api.addCategory(this.props.token, category)
-        //     }
-        //     if (res) {
-        //         this.setState({ message: 'Operation successfull' })
-        //         await this.props._getCategory()
-        //         if (this.state.edit) {
-        //             window.location.reload()
-        //         }
-        //     }
-        //     this.setState({ progress: 0 })
-        //     this.props.setLoading(false)
-        // }
-    // }
 
     render() {
-       
-        
-            // console.log(this.props.items)
-        
+
+
+        // console.log(this.props.items)
+
 
 
         return (
@@ -192,7 +107,7 @@ addProduct = async (e) => {
                                 </div>
                             }
                             <div class="container-fluid">
-                                <form onSubmit={this.addProduct} >
+                                <form onSubmit={this.uploadImage} >
                                     <div class="row">
                                         <div class="col-md-12">
                                             <input type="hidden" name="_token" value="hrxeTL0t5hnBVb8Q3Q4vTc42CXU88qyd320Luzkv"></input>
@@ -211,7 +126,7 @@ addProduct = async (e) => {
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label>Product ID</label>
-                                                    <input type="text" name="name" placeholder="0122" required class="form-control" onChange={(e) => this.setState({categoryID : e.target.value })}></input>
+                                                    <input type="text" name="name" placeholder="0122" required class="form-control" onChange={(e) => this.setState({ categoryID: e.target.value })}></input>
 
 
                                                 </div>
@@ -224,9 +139,9 @@ addProduct = async (e) => {
                                                 </div>
 
                                             </div>
-                                             <div class="form-group">
+                                            <div class="form-group">
                                                 <label htmlFor="file-loader">Select Image</label>
-                                                <input type="file"  />
+                                                <input type="file" onChange={this.pickImage} />
                                             </div>
                                             {/* <div class="form-group">
                                                 <label htmlFor="file-loader">Select Image</label>

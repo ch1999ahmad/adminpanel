@@ -58,7 +58,7 @@ export const _updateuser = (param, _id) => {
 export const _deleteitem = (param, _id) => {
         return async (mapDispatch, getState) =>{
         console.log(_id)
-        let response = await api (path.delete +  _id, "DELETE", param)
+        let response = await api(path.delete +  _id, "DELETE", param)
         console.log(response)
     }
 }
