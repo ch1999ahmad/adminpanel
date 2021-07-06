@@ -1,7 +1,7 @@
 
 // import { connect } from 'react-redux';
 // import { update_user } from '../actions/authActions';
-import { LOGIN, UPDATE, DELETE } from '../actions/Types';
+import { LOGIN, UPDATE, DELETE,LOGOUT } from '../actions/Types';
 
 
 const initialState = {
@@ -21,10 +21,14 @@ const authReducer = (state = initialState, action, info) => {
             }
 
 
+            case LOGOUT:
+                {
+                    // console.log(action.coin)
+                    return {
+                        ...state, logged: false, user: {}
+                    }
+                }
 
-
-        default:
-            return state;
 
 
         case UPDATE:
@@ -44,6 +48,11 @@ const authReducer = (state = initialState, action, info) => {
                     type: DELETE, info: info
                 }
             }
+
+
+            
+        default:
+            return state;
 
     }
 

@@ -11,7 +11,9 @@ import '../styles/index.css'
 // import api from "../services/api";
 import SideNavigation from '../components/SideNavigation'
 import { connect } from "react-redux";
-import { _getCategories } from "../store/middlewares/appMiddleware";
+import { _deleteCategories, _getCategories } from "../store/middlewares/appMiddleware";
+import api from "../api/api";
+import path from "../api/path";
 
 class CategoriesPage extends React.Component {
 
@@ -57,7 +59,14 @@ class CategoriesPage extends React.Component {
   //     console.log(res.result);
   //     this.setState({orderdata:res.result})
   // }
-
+  deletecat = async (_id) => {
+    // alert(path.deleteitem+_id)
+    console.log("delting categories")
+    api(path.deletecat + '/' + _id, "DELETE").then(res => {
+      console.log(res)
+      alert("ITem categories")
+    })
+  }
 
   // deleteHandler = async () => {
   //     console.log(this.state.deleteID)
@@ -148,12 +157,10 @@ class CategoriesPage extends React.Component {
                                       {categories.name}
                                     </td>
                                     <td>
-
-                                      <img src={categories.image || "./viewitemhtml_files/1603476881.png"} style={{ width: "80px", height: "80px" }}></img>
-
+                                      <button onClick={() => this.deletecat(categories._id)}>
+                                        delete
+                                      </button>
                                     </td>
-
-                                    <td>{categories.description}</td>
 
 
                                     {/* <td><a onClick={() => this.setState({ showModal: true, deleteID: item.id })} className="btn btn-danger white">Delete</a></td> */}
@@ -201,7 +208,8 @@ const mapDispatch = dispatch => {
   return {
     // _login: (param) => dispatch(_login(param)),
     // setLoading: (bol) => dispatch(_setLoading(bol)),
-    _getCategories: () => dispatch(_getCategories())
+    _getCategories: () => dispatch(_getCategories()),
+    _deleteCategories: () => dispatch(_deleteCategories())
 
 
   }

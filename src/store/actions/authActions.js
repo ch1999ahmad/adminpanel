@@ -1,4 +1,4 @@
-import { DELETE, LOGIN, LOGOUT, UPDATE } from './Types';
+import {  LOGIN, LOGOUT, UPDATE,DELETE } from './Types';
 
 
 export const login = (  user) => (

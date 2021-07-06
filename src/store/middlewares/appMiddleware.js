@@ -82,6 +82,27 @@ export const _getCategories = () => {
     }
 } 
  
- 
+export const _deleteCategories = () => {
+
+    return async (dispatch, getState) => {
+
+
+        let res = await api(path.deleteCategories, "DELETE",);
+        if (res) {
+            // dispatch(set_items(res.result))
+        }
+    }
+}
+export const _getOrders = () => {
+
+    return async (dispatch, getState) => {
+
+
+        let res = await api(path.getorders, "GET",);
+        if (res) {
+            dispatch(set_orders(res.result))
+        }
+    }
+}
 
 

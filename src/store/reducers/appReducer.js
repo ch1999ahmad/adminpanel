@@ -1,4 +1,4 @@
-import {  SET_USERS, SET_ITEMS, SET_CATEGORIES } from '../actions/Types'
+import {  SET_USERS, SET_ITEMS, SET_CATEGORIES, SET_ORDERS } from '../actions/Types'
 
 const initialState = {
     categories: [], items: [], 
@@ -48,12 +48,12 @@ const appReducer = (state = initialState, action) => {
         //         coupons: action.payload,
         //     }
         // }
-        // case SET_ORDERS: {
-        //     return {
-        //         ...state,
-        //         orders: action.payload,
-        //     }
-        // }
+        case SET_ORDERS: {
+            return {
+                ...state,
+                orders: action.payload,
+            }
+        }
         // case SET_TRANSACTIONS: {
         //     return {
         //         ...state,

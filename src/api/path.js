@@ -11,6 +11,8 @@ export default {
     itemsadd: BASE_URL +'items/add',
     getitem: BASE_URL + 'items',
     categoriesadd: BASE_URL + 'categories/add',
+    deletecat: BASE_URL + 'categories/delete',
     getcategories: BASE_URL + 'categories',
-    deleteitem: BASE_URL + 'items/delete'
+    deleteitem: BASE_URL + 'items/delete',
+    getorders: BASE_URL + 'orders'
 }

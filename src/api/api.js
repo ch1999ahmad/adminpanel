@@ -12,10 +12,11 @@ export default function api(path, method, params) {
             'Content-Type': 'application/json',
 
         },
-        method: method,
-        
-        body: JSON.stringify(params) 
+        method: method,  
     };
+    if(params){
+        options.body=JSON.stringify(params)
+    }
 
     return fetch(path, options)
         .then(resp => resp.json())

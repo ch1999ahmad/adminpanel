@@ -26,7 +26,7 @@ class Login extends React.Component {
            email: this.state.email.trim(),
           password:   this.state.password.trim()
             } )
-        // if (res.success === true) {
+         if (res.success === true) {
         //     window.location ="/App"
             
             // if (this.props.admin) {
@@ -36,7 +36,7 @@ class Login extends React.Component {
             //     window.history.back()
 
             // }
-        // }
+         }
         // this.props.setLoading(false)
     }
 

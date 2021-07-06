@@ -1,4 +1,4 @@
- /* body{
+  /* /* body{
    text-align: center;
    
    background-color: grey;
@@ -6,12 +6,13 @@
    
    
 } */
-form{
-   /* background-color: rgb(33, 40, 42); */
-   /* width: 35%; */
+/* form{
+   background-color: rgb(33, 40, 42);
+   width: 35%;
    border-radius: 15px;
+   margin-left: 20%;
 }
-/* }
+ 
 img{
    width: 155px;
    margin-top: 10px;
@@ -33,4 +34,4 @@ input{
 button:hover{
    background-color: rgb(86, 51, 51);
    color: white;
-} */ 
+}    */

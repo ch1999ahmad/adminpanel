@@ -73,6 +73,7 @@ class Addproduct extends React.Component {
         console.log(response.message)
         alert(response.message)
     }
+    
     pickImage = (e) => {
         e.preventDefault()
         if (e.target.files)
