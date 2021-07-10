@@ -157,7 +157,7 @@ pickImage = (e) => {
         //     if (this.state.edit) {
         //         res = await api.editCategory(this.props.token, category)
         //     }
-        //     else {
+        //     else {   
 
         //         res = await api.addCategory(this.props.token, category)
         //     }
