@@ -73,7 +73,7 @@ class Addproduct extends React.Component {
         console.log(response.message)
         alert(response.message)
     }
-    
+
     pickImage = (e) => {
         e.preventDefault()
         if (e.target.files)
@@ -125,11 +125,25 @@ class Addproduct extends React.Component {
 
 
                                                 </div>
-                                                <div class="form-group col-md-6">
+                                                {/* <div class="form-group col-md-6">
                                                     <label>Product ID</label>
                                                     <input type="text" name="name" placeholder="0122" required class="form-control" onChange={(e) => this.setState({ categoryID: e.target.value })}></input>
 
 
+                                                </div> */
+                                                }
+
+
+                                                <div className="dropdown form-group col-md-6">
+                                                    
+                                                <label>Categories</label>
+                                                    <select className="form-control" value={this.state.Technology} onChange={this.Changetechnology}  onChange={(e) => this.setState({ categoryID: e.target.value })}>
+                                                        <option>Non-Groceries</option>
+                                                        <option>Groceries</option>
+                                                        <option>Electronics</option>
+                                                        <option>Crockeries</option>
+                                                        <option>Fruits</option>
+                                                    </select>
                                                 </div>
 
                                             </div>

@@ -13,8 +13,8 @@ import App from "../App";
 class Login extends React.Component {
 
     state = {
-        email: '',
-        password: '',
+        email: 'sahab@gmail.com',
+        password: '12',
         checkbox: '',
         loading: true,
     }

@@ -104,14 +104,14 @@ class CategoriesPage extends React.Component {
                               <option value="50">50</option>
                               <option value="100">100</option>
                             </select>
-                                        entries
-                                        </label>
+                              entries
+                            </label>
                           </div>
                         </div>
                         <div class="col-sm-12 col-md-6">
                           <div id="example1_filter" class="dataTables_filter">
                             <label>Search:
-                                                    <input type="search" class="form-control form-control-sm" placeholder="" aria-controls="example1"></input>
+                              <input type="search" class="form-control form-control-sm" placeholder="" aria-controls="example1"></input>
                             </label>
                           </div>
                         </div>
@@ -125,27 +125,27 @@ class CategoriesPage extends React.Component {
                               <tr role="row">
                                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Sr.#: activate to sort column ascending">
                                   Sr.#
-                                                            </th>
+                                </th>
                                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Bottle Image: activate to sort column ascending">
                                   Name
-                                                                    </th>
-                                                                    <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Bottle Image: activate to sort column ascending">
+                                </th>
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Bottle Image: activate to sort column ascending">
                                   ID
-                                                                    </th>
+                                </th>
                                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Bottle Image: activate to sort column ascending">
                                   Image
-                                                                    </th> 
-
-                               <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Category: activate to sort column ascending">
+                                </th>
+{/* 
+                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Category: activate to sort column ascending">
                                   Description
-                                                                        </th> 
+                                </th> */}
 
                                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="edit: activate to sort column ascending">
                                   Delete
-                                                            </th>
-                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="edit: activate to sort column ascending">
+                                </th>
+                                {/* <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="edit: activate to sort column ascending">
                                   Edit
-                                                            </th>
+                                </th> */}
                               </tr>
                             </thead>
                             <tbody>
@@ -156,6 +156,9 @@ class CategoriesPage extends React.Component {
                                     <td class="sorting_1">
                                       {categories.name}
                                     </td>
+
+
+                                    
                                     <td>
                                       <button onClick={() => this.deletecat(categories._id)}>
                                         delete

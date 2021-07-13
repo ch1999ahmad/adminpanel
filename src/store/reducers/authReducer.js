@@ -31,15 +31,15 @@ const authReducer = (state = initialState, action, info) => {
 
 
 
-        case UPDATE:
-            {
-                // console.log(action.coin)
-                return {
-                    ...state,
+        // case UPDATE:
+        //     {
+        //         // console.log(action.coin)
+        //         return {
+        //             ...state,
 
-                    type: UPDATE, info: info
-                }
-            }
+        //             type: UPDATE, info: info
+        //         }
+        //     }
 
         case DELETE:
             {
