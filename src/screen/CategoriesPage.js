@@ -64,7 +64,7 @@ class CategoriesPage extends React.Component {
     console.log("delting categories")
     api(path.deletecat + '/' + _id, "DELETE").then(res => {
       console.log(res)
-      alert("ITem categories")
+      alert("Delete Category")
     })
   }
 
@@ -129,12 +129,12 @@ class CategoriesPage extends React.Component {
                                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Bottle Image: activate to sort column ascending">
                                   Name
                                 </th>
-                                <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Bottle Image: activate to sort column ascending">
+                                {/* <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Bottle Image: activate to sort column ascending">
                                   ID
                                 </th>
                                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Bottle Image: activate to sort column ascending">
                                   Image
-                                </th>
+                                </th> */}
 {/* 
                                 <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Category: activate to sort column ascending">
                                   Description
