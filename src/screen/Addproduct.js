@@ -16,6 +16,7 @@ import { ProgressBar } from 'react-bootstrap'
 import SideNavigation from '../components/SideNavigation'
 import api from "../api/api";
 import path from "../api/path";
+import Header from "../components/Header";
 
 class Addproduct extends React.Component {
     constructor() {
@@ -92,6 +93,7 @@ class Addproduct extends React.Component {
 
         return (
             <div className="flexible-content">
+            <Header/>
                 <SideNavigation />
                 <main id="content" className="p-5">
                     <div className="dashboard">
@@ -130,19 +132,23 @@ class Addproduct extends React.Component {
                                                     <input type="text" name="name" placeholder="0122" required class="form-control" onChange={(e) => this.setState({ categoryID: e.target.value })}></input>
 
 
-                                                </div> */
-                                                }
+                                                </div>  */}
+                                                
 
 
                                                 <div className="dropdown form-group col-md-6">
                                                     
                                                 <label>Categories</label>
                                                     <select className="form-control" value={this.state.Technology} onChange={this.Changetechnology}  onChange={(e) => this.setState({ categoryID: e.target.value })}>
-                                                        <option>Non-Groceries</option>
-                                                        <option>Groceries</option>
+                                                        <option>Toys</option>
+                                                        <option>Accessories</option>
                                                         <option>Electronics</option>
                                                         <option>Crockeries</option>
                                                         <option>Fruits</option>
+                                                        <option>Vegetables</option>
+                                                        <option>Men's Wear</option>
+                                                        <option>Women Wear</option>
+                                                        <option>Sports</option>
                                                     </select>
                                                 </div>
 

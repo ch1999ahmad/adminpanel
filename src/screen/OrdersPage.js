@@ -11,7 +11,7 @@ import { _getOrders } from '../store/middlewares/appMiddleware';
 import { connect } from 'react-redux';
 import path from '../api/path'
 import api from '../api/api'
-
+import Header from "../components/Header";
 
 
 // import ConfirmModal from '../components/ConfirmModal'
@@ -50,7 +50,7 @@ class OrdersPage extends React.Component {
     console.log("delting item")
     api(path.deleteitem + '/' + _id, "DELETE").then(res => {
       console.log(res)
-      alert("ITem delete")
+      alert("Item delete")
     })
 
     // alert(_id)
@@ -59,8 +59,10 @@ class OrdersPage extends React.Component {
 
 
   render() {
+    console.log(this.props.orders)
     return (
       <div className="flexible-content">
+      <Header/>
         <SideNavigation />
         <main id="content" className="p-5">
           <>
@@ -118,7 +120,7 @@ class OrdersPage extends React.Component {
                                     Product Price
                                   </th>
                                   <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Category: activate to sort column ascending">
-                                    Product Name
+                                    Product ID
                                   </th>
 
                                   
@@ -126,7 +128,7 @@ class OrdersPage extends React.Component {
                                 </tr>
                               </thead>
                               <tbody>
-                                {
+                              {
                                   this.props.orders.map((orders, index) =>
                                     <tr role="row" class="odd">
                                       <td tabindex="0" class="">{index + 1}</td>

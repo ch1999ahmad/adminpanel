@@ -4,6 +4,7 @@ import SideNavigation from '../components/SideNavigation'
 import { connect } from 'react-redux';
 import api from '../api/api'
 import { _getUsers } from '../store/middlewares/appMiddleware';
+import Header from "../components/Header";
 
 class UsersPage extends React.Component {
   constructor() {
@@ -51,10 +52,11 @@ getuser = async (e) => {
 // }
 
   render(){
-    console.log(this.props.users)
-    alert(this.props.users)
+    // console.log(this.props.users)
+    // alert(this.props.users)
   return(
     <div className = "flexible-content" >
+    <Header/>
         <SideNavigation />
         <main id="content" className="p-5">
         <div className="dashboard" style={{ paddingTop: 100 }}>

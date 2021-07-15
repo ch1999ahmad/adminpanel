@@ -16,6 +16,7 @@ import { ProgressBar } from 'react-bootstrap'
 import SideNavigation from '../components/SideNavigation'
 import api from "../api/api";
 import path from "../api/path";
+import Header from "../components/Header";
 
 class AddCategory extends React.Component {
     constructor() {
@@ -182,6 +183,7 @@ pickImage = (e) => {
 
             return (
                 <div className="flexible-content">
+                <Header/>
                     <SideNavigation />
                     <main id="content" className="p-5">
                         <div className="dashboard">
@@ -205,7 +207,7 @@ pickImage = (e) => {
                                                 <div className="row">
                                                     <div class="form-group col-md-6">
                                                         <label> Name</label>
-                                                        <input type="text" name="name" placeholder="john etc" required class="form-control" onChange={(e) => this.setState({ name: e.target.value })}></input>
+                                                        <input type="text" name="name" placeholder="Add Categories" required class="form-control" onChange={(e) => this.setState({ name: e.target.value })}></input>
     
     
                                                     </div>

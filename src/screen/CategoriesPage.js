@@ -14,6 +14,7 @@ import { connect } from "react-redux";
 import { _deleteCategories, _getCategories } from "../store/middlewares/appMiddleware";
 import api from "../api/api";
 import path from "../api/path";
+import Header from "../components/Header";
 
 class CategoriesPage extends React.Component {
 
@@ -83,6 +84,7 @@ class CategoriesPage extends React.Component {
     // alert(this.props.items)
     return (
       <div className="flexible-content" >
+      <Header/>
         <SideNavigation />
         <main id="content" className="p-5">
           <div className="dashboard" style={{ paddingTop: 100 }}>
@@ -160,7 +162,7 @@ class CategoriesPage extends React.Component {
 
                                     
                                     <td>
-                                      <button onClick={() => this.deletecat(categories._id)}>
+                                      <button className="bttn" onClick={() => this.deletecat(categories._id)}>
                                         delete
                                       </button>
                                     </td>

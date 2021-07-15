@@ -16,7 +16,7 @@ import { Button } from "react-bootstrap";
 import path from "../api/path";
 import { _deleteitem } from "../store/middlewares/authMiddleware";
 import api from "../api/api";
-
+import Header from "../components/Header";
 
 
 class ProductsPage extends React.Component {
@@ -79,7 +79,9 @@ class ProductsPage extends React.Component {
     console.log(this.props.items)
     // alert(this.props.items)
     return (
+
       <div className="flexible-content" >
+      <Header/>
         <SideNavigation />
         <main id="content" className="p-5">
           <div className="dashboard" style={{ paddingTop: 100 }}>
@@ -159,7 +161,7 @@ class ProductsPage extends React.Component {
                                     <td>{items.description}</td>
                                     <td>{items.categoryID}</td>
                                     <td>
-                                      <button onClick={() => this.deleteItem(items._id)}>
+                                      <button className="bttn" onClick={() => this.deleteItem(items._id)}>
                                         Delete
                                       </button>
                                     </td>

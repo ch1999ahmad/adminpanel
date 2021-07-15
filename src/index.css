@@ -7,7 +7,7 @@ body{
   line-height: 1.5;
   color: #212529;
   text-align: left;
-  background-color: black;
+  /* background-color: rgb(230, 245, 187)!important; */
 }
 
 a{
@@ -183,6 +183,11 @@ a{
   border-radius: 5px !important;
   background-color: #33c960 !important;
 }
+.bttn{
+  background-color:#33c960 ;
+  color: white;
+  border-radius: 3px;
+}
 .Btn:hover{
   color: white;
 }
@@ -190,7 +195,11 @@ a{
 .page-footer{
   margin-left: 270px;
 }
-
+.header{
+  text-align: center;
+  color:#e29726 ;
+  
+}
 @media (max-width: 1199.98px) {
   .sidebar-fixed {
     display: none;
